@@ -48,7 +48,10 @@
             var selectedItem=chart.getSelection()[0];
             if(selectedItem) {
               var state=data.getValue(selectedItem.row,0);
-              window.location='https://google.com';
+              if(state.toLowerCase() == 'gujarat')
+              window.location='https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiUy-LatIPVAhVBOI8KHVj0D7AQFggnMAA&url=http%3A%2F%2Fwww.gujaratindia.com%2F&usg=AFQjCNHA8B0Mt4xvsfFjciz7fYFb4-6KzA';
+          else if (state.toLowerCase() == 'bihar')
+          	window.location='https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiN7ojwtIPVAhWBPI8KHVgIALYQFggkMAA&url=http%3A%2F%2Fwww.gov.bih.nic.in%2F&usg=AFQjCNF5SNFHC6asXmG4CCK_htzDU0gMpA';
             }
           });
         };
