@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      
+      google.charts.load('current', {'packages':['corechart']});
+
+            google.charts.setOnLoadCallback(drawmaharashtraChart);
+
+          google.charts.setOnLoadCallback(drawgujaratChart);
+
+      function drawmaharashtraChart() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'features');
+        data.addColumn('number', 'value');
+        data.addRows([
+          ['Population', 62.7],
+          ['Area', 196.024],
+          ['Districts', 33],
+          ['GDP', 10.94],
+          ['Growth rate ', 14],
+	  
+        ]);
+
+        var options = {title:'State:Maharashtra',
+                       width:'100%',
+                       height:'50%'};
+
+        var chart = new google.visualization.PieChart(document.getElementById('maharashtra_chart_div'));
+        chart.draw(data, options);
+      }
+
+
+      function drawgujaratChart() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'features');
+        data.addColumn('number', 'value');
+        data.addRows([
+          ['Population', 114.2],
+          ['Area', 307.713],
+          ['Districts', 36],
+          ['GDP', 25.35],
+          ['Growth rate ', 11.8],
+	  
+        ]);
+
+        // Set options for gujarat's pie chart.
+        var options = {title:'State:Gujarat',
+                       width:'100%',
+                       height:'50%'};
+
+        // Instantiate and draw the chart for gujarat's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('gujarat_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <!--Table and divs that hold the pie charts-->
+    <table class="columns">
+      <tr>
+        <td><div id="maharashtra_chart_div" style="border: 1px solid #ccc"></div></td>
+	</tr>
+	<tr>
+        <td><div id="gujarat_chart_div" style="border: 1px solid #ccc"></div></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
