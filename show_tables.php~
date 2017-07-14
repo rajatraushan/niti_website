@@ -35,9 +35,13 @@
             </div>
         </div>
     </nav>
-	
+	<script>
+function msg() {
+    alert("Hello world!");
+}
+</script>
 
-<br><br><br>
+
 
 <?php
 $db_host = 'localhost';
@@ -64,7 +68,7 @@ while($row = mysql_fetch_row($result))
 {
     echo "<tr>";
      foreach($row as $cell)
-        echo "<td><a href='tabledata.php'>$cell</a></td>";
+        echo "<td>$cell</td>";
     
 	echo "</tr>\n";
 }

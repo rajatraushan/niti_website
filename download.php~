@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>niti_aayog\search</title>
+    <title>niti_aayog\download</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="assets/css/user.css">
@@ -39,36 +39,57 @@
 
 <br><br><br>
 
+
+
 <?php
 $db_host = 'localhost';
 $db_user = 'root';
 $db_pwd = '';
-$db = $_POST['database'];
+$database = $_POST["dbname"];
+$table = $_POST["tablename"];
 if (!mysql_connect($db_host, $db_user, $db_pwd))
     die("Can't connect to database");
-if (!mysql_select_db($db))
+
+if (!mysql_select_db($database))
     die("Can't select database");
-$result = mysql_query("SHOW TABLES ");
+
+// sending query
+$result = mysql_query("SELECT * FROM {$table} ");
 if (!$result) {
     die("Query to show fields from table failed");
 } 
-$fields_num = mysql_num_fields($result);
-echo "<table border='1' color=blue><tr>";
-for($i=0; $i<$fields_num; $i++)
-{
-    $field = mysql_fetch_field($result);
-    echo "<td>{$field->name}</td>";
-}
-echo "</tr>\n";
-while($row = mysql_fetch_row($result))
-{
-    echo "<tr>";
-     foreach($row as $cell)
-        echo "<td><a href='tabledata.php'>$cell</a></td>";
+
+
+$result1 = mysql_query("select * from $table into outfile '/var/lib/mysql-files/$table.csv' fields terminated by ',' ");
+	
     
-	echo "</tr>\n";
-}
-mysql_free_result($result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $file = "/var/lib/mysql-files/$table.csv";
+    if (file_exists($file)) {
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment; filename="'.basename($file).'"');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize($file));
+    readfile($file);
+    exit;}
 ?>
 </body>
 

@@ -4,31 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>niti_aayog\download</title>
+    <title>niti_aayog\jharkhand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="assets/css/user.css">
     <link rel="stylesheet" href="assets/bootstrap/fonts/font-awesome.min.css">
-<script language="javascript" type="text/javascript">
-function dynamicdropdown(listindex)
-    {
-        switch (listindex)
-        {
-        case "manual" :
-            document.getElementById("status").options[0]=new Option("Select status","");
-            document.getElementById("status").options[1]=new Option("OPEN","open");
-            document.getElementById("status").options[2]=new Option("DELIVERED","delivered");
-            break;
-        case "online" :
-            document.getElementById("status").options[0]=new Option("Select status","");
-            document.getElementById("status").options[1]=new Option("OPEN","open");
-            document.getElementById("status").options[2]=new Option("DELIVERED","delivered");
-            document.getElementById("status").options[3]=new Option("SHIPPED","shipped");
-            break;
-        }
-        return true;
-    }
-</script>
 </head>
 
 <body>
@@ -41,36 +21,38 @@ function dynamicdropdown(listindex)
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand navbar-link" href="https://www.niti.gov.in"><img src="assets/img/logo.jpg" id="logo"><strong>Data Portal</strong></a>
+                <a class="navbar-brand navbar-link" href="homepage.html"><img src="assets/img/logo.jpg" id="logo"><strong>Data Portal</strong></a>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active" role="presentation"><a href="homepage.html">Home </a></li>
+                    <li class="active" role="presentation"><a href="homepage.html">Home</a></li>
                     <li role="presentation"><a href="search.html">Search </a></li>
                     <li role="presentation"><a href="compare.html">Compare </a></li>
-			<li role="presentation"><a href="map.html">Map</a></li>
+		<li role="presentation"><a href="map.html">Map</a></li>
 		<li role="presentation"><a href="download.html">Download</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div id="promo_download">
-        <div class="jumbotron">
-            <h2>Download</h2><br>
-            <p> 
-		<form action="download.php" method="POST">
-   			<input type="text" placeholder="  Sector" name="dbname"></input><br><br>
-			<input type="text" placeholder="  Dataset" name="tablename"></input><br><br>
-			<input type="submit" value="submit"></input><br>
-		</form>
-	    </p>
-
-	</div>
-    </div>
-    <div class="container site-section" id="welcome">
-        <h1>View datasets and Save</h1>
-        <p>Select the sector and dataset to view and download in csv format.</p>
-    </div>
+    
+    <div class="dark-section">
+        <div class="container site-section" id="why">
+            <h1>welcome to Jharkhand !!!<img src='assets/img/jharkhand.jpg' width=80% height=20%></h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <p> </p>
+                </div>
+                	<div class="col-md-4 item"><img src='assets/img/wom.png' width=40% height=40%>
+                	    <h3>Population</h3>
+                	    <p id="para">31.9 million</p>
+                	</div>
+			<div class="col-md-4 item">
+                	    <h3>Total area</h3>
+                	    <p id="para">79,714 km²</p>
+                	</div>
+                </div>
+            </div>
+           
             <footer>
                 <div class="row">
                     <div class="col-md-4 col-sm-6 footer-navigation">
@@ -91,10 +73,9 @@ function dynamicdropdown(listindex)
                     </div>
                     <div class="clearfix visible-sm-block"></div>
                     <div class="col-md-4 footer-about">
-                        <h4>Connect with us:</h4>
-            <p>         
-            <a href ="https://www.niti.gov.in">NITI Aayog</a>
-                        </p>
+                        <h4>About NITI:</h4>
+                        <p> National Institute of Transforming India. Our data source is</p>
+			<a href="https://www.data.gov.in">data.gov.in</a>
                     </div>
                 </div>
             </footer>

@@ -1,5 +1,12 @@
 <html>
     <head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>niti_aayog\search</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/bootstrap/fonts/font-awesome.min.css">
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
       <script type="text/javascript">
         google.charts.load('current', {
@@ -31,7 +38,8 @@
             ['Jharkhand'],
             ['Assam'],
             ['Rajasthan'],
-            ['Maharashtra']
+            ['Maharashtra'],
+            ['Goa']
           ]);
           var options = {
             region: 'IN', // India
@@ -49,15 +57,53 @@
             if(selectedItem) {
               var state=data.getValue(selectedItem.row,0);
               if(state.toLowerCase() == 'gujarat')
-              window.location='https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiUy-LatIPVAhVBOI8KHVj0D7AQFggnMAA&url=http%3A%2F%2Fwww.gujaratindia.com%2F&usg=AFQjCNHA8B0Mt4xvsfFjciz7fYFb4-6KzA';
+              window.location='gujarat.html';
           else if (state.toLowerCase() == 'bihar')
-          	window.location='https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiN7ojwtIPVAhWBPI8KHVgIALYQFggkMAA&url=http%3A%2F%2Fwww.gov.bih.nic.in%2F&usg=AFQjCNF5SNFHC6asXmG4CCK_htzDU0gMpA';
+          	window.location='bihar.html';
+	else if (state.toLowerCase() == 'uttar pradesh')
+          	window.location='up.html';
+	else if (state.toLowerCase() == 'jharkhand')
+          	window.location='jharkhand.html';
+else if (state.toLowerCase() == 'andhra pradesh')
+          	window.location='andhra.html';
+
+
+          else 
+            window.location='homepage.html';
             }
           });
         };
       </script>
     </head>
     <body>
+      <br> <br> <br>  
+	
       <div id="geochart-colors" style="width: 100%; height: 100%;"></div>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbar-link" href="https://www.niti.gov.in"><img src="assets/img/logo.jpg" id="logo"><strong>Data Portal</strong></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active" role="presentation"><a href="homepage.html">Home </a></li>
+                    <li role="presentation"><a href="search.html">Search </a></li>
+                    <li role="presentation"><a href="compare.html">Compare </a></li>
+      <li role="presentation"><a href="map.html">Map</a></li>
+      <li role="presentation"><a href="download.html">Download</a></li>
+                </ul>
+	            
+	</div>
+<marquee>Click on the state to check the features of that particular state.</marquee>
+        </div>
+
+    </nav>
+
     </body>
 </html>
